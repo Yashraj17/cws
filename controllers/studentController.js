@@ -125,7 +125,7 @@ static generatePayment= async (req,res)=>{
     for (let c = 0; c < stdCourse.length; c++) {
     var doj = stdCourse[c].doj;
     var Cor_id = stdCourse[c].CourseId._id 
-    console.log('this is courese',Cor_id);
+    // console.log('this is courese',Cor_id);
     var dateOfJoin = new Date(doj)
     var dojYear = dateOfJoin.getFullYear();
     var dojMonth = dateOfJoin.getMonth() + 1;
