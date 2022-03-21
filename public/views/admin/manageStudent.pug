@@ -1,0 +1,31 @@
+extend base.pug
+
+block content 
+    table.table.table.sm
+        tr 
+            th id
+            th Name
+            th Contact
+            th Email
+            th Address 
+            th Education
+            th Gender
+            th Delete 
+            th view 
+            -var count = 0
+        each value in data
+            -count ++
+            tr 
+                td= count
+                td= value.name
+                td= value.contact
+                td= value.email
+                td= value.address
+                td= value.education
+                td= value.gender
+                td
+                    a(href=`${'/admin/delete/'+value._id}`).btn.btn-danger.btn.small.me-2
+                        i.bi.bi-trash-fill 
+                td
+                    a(href=`/admin/student/${value._id}/view/`).btn.btn-success.btn.small
+                        i.bi.bi-eye 

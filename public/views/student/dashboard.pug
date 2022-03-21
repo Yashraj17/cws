@@ -1,0 +1,35 @@
+extends base.pug
+
+block content 
+    .container.mt-3
+        .row 
+            .col-3 
+                .card.shadow 
+                    img.card-img-top(src="https://p.kindpng.com/picc/s/451-4517876_default-profile-hd-png-download.png",alt="")
+                    .card-body 
+                        h2.card-title= user.name
+                        h6= user.email 
+            .col-9 
+                .container.bg-primary.text-white.shadow.p-4 
+                    h1.display-3 Welcome, #{user.name} in CWS 
+                    p.lead Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsum?
+                    a.btn.btn-danger(href="") Getting Started 
+                .row 
+                    .col-4 
+                        .card.mt-2.border.bg-warning.text-white.shadow
+                            .card-body
+                                h1.h4 Manage Courses 
+                                a.btn.btn-dark(href="/student/course/manage") Manage 
+                                a.btn.btn-success.ms-2(href="/student/course/add") Add +
+                    .col-4 
+                        .card.mt-2.bg-danger.text-white.shadow
+                            .card-body
+                                h1.h4 Manage Payment
+                                a.btn.btn-dark(href="/student/payment/manage") Manage 
+                                a.btn.btn-success.ms-2(href="") Add +
+                    .col-4 
+                        .card.mt-2.bg-secondary.text-white.shadow
+                            .card-body
+                                h1.h4 Manage Profile
+                                a.btn.btn-dark(href="") Manage 
+                                a.btn.btn-success.ms-2(href="") Add +

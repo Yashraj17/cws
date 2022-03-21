@@ -1,0 +1,43 @@
+extends base.pug
+
+block content 
+    .container 
+        .row 
+            .col-6.mx-auto 
+                .card 
+                    .card-body 
+                        form(action="", method="post")
+                            .mb-3 
+                                label(for="") Name 
+                                input(type="text", name="name").form-control  
+                            .mb-3 
+                                label(for="") Father 
+                                input(type="text", name="father_name").form-control  
+                            .mb-3 
+                                label(for="") Contact 
+                                input(type="text", name="contact").form-control  
+                            .mb-3 
+                                label(for="") Email 
+                                input(type="text", name="email").form-control  
+                            .mb-3 
+                                label(for="") Address 
+                                input(type="text", name="address").form-control  
+                            .mb-3.d-flex
+                                label(for="") Gender 
+                                .form-check
+                                    input(type="radio", name="gender" value="Male").form-check  
+                                    label(for="").form-check-label Male 
+                                .form-check
+                                    input(type="radio", name="gender" value="Female").form-check  
+                                    label(for="").form-check-label Female 
+                                .form-check
+                                    input(type="radio", name="gender" value="Other").form-check  
+                                    label(for="").form-check-label Other
+                            .mb-3 
+                                label(for="") Education (currently) 
+                                input(type="text", name="education").form-control  
+                            .mb-3 
+                                label(for="") Password
+                                input(type="password", name="password").form-control  
+                            .mb-3 
+                                input(type="submit", value="submit").btn.btn-success.w-100

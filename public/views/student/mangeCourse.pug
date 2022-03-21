@@ -1,0 +1,27 @@
+extends base.pug
+
+block content 
+    .container 
+        .row.mt-4
+            .col-9.mx-auto 
+                table.table 
+                    tr 
+                        th id
+                        th Course Title
+                        th fee
+                        th Duration
+                        th Joining Date
+                        th Status 
+                        -var count = 0
+                    each x in studentCourse 
+                        tr  
+                            th= count+=1
+                            th= x.CourseId.title
+                            th= x.CourseId.price
+                            th= `${x.CourseId.duration } Months`
+                            th= x.doj
+                            th
+                                if x.status==1
+                                    a.btn.btn-danger.btn-sm(href=`${'/student/course/manage/'+x._id}`) Active
+                                else
+                                    a.btn.btn-success.btn-sm(href=`${'/student/course/manage/'+x._id}`) On hold

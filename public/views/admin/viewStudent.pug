@@ -1,0 +1,36 @@
+extend base.pug
+
+block content 
+    .container 
+        .row 
+            .col-6 
+                h5 View student Details 
+            .col-6 
+                    .d-flex
+                        if student.status == 1
+                            a(href=`${'/admin/student-approve/'+student._id}`).btn.btn-success.btn.sm.me-4 Approve Admission 
+
+                        else 
+                            a(href=`${'/admin/deactive/'+student._id}`).btn.btn-danger Deactive  
+    table.table 
+        tr 
+            th Name 
+            td= student.name 
+        tr 
+            th Contact 
+            td= student.contact    
+        tr 
+            th Father Name 
+            td= student.father_name
+        tr 
+            th Email 
+            td= student.email
+        tr 
+            th Admission 
+            td= student.address 
+        tr 
+            th Education 
+            td= student.education
+        tr 
+            th Gender 
+            td= student.gender

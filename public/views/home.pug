@@ -1,0 +1,34 @@
+extend base.pug
+block content 
+        .container-fluid.p-0
+            .row.gx-0 
+                .col-6.bg-warning(style="height:100vh") 
+                    .row 
+                        .col-10.mx-auto.mt-5 
+                            .card.mt-5 
+                                .card-body 
+                                    h2.card-title Student Login 
+                                    form(action="/student/login", method="post") 
+                                        .mb-3 
+                                        .form-floating 
+                                            input.form-control(type="email",name='email',placeholder="enter enail")
+                                            label(for="") Email/Mobile No 
+                                        .mb-3 
+                                        .form-floating 
+                                            input.form-control(type="password",name="password",placeholder="enter password")
+                                            label(for="") Password
+                                        .mt-3 
+                                            input(type="submit", value="Login").btn.btn-success.w-100
+                .col-6(style="height:100vh").bg-dark
+                    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary 
+                        .container.px-3 
+                            a.navbar-brand(href="") Code With sadiq 
+                            ul.navbar-nav 
+                                li.nav-item 
+                                    a(href="/").nav-link Home 
+                                li.nav-item 
+                                    a(href="").nav-link About 
+                                li.nav-item 
+                                    a(href="").nav-link Course 
+                                li.nav-item 
+                                    a.btn.btn-danger(href="/apply") Apply for Admission

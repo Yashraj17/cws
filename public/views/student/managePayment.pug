@@ -1,0 +1,39 @@
+extends base.pug
+
+block content
+    .container.mt-5
+        .row 
+            .col-3 
+               .card.shadow 
+                    img.card-img-top(src="https://p.kindpng.com/picc/s/451-4517876_default-profile-hd-png-download.png",alt="")
+                    .card-body 
+                        h2.card-title= student.name
+                        h6= student.email 
+            .col-9 
+                .container
+                    table.table 
+                        tr  
+                            th Course Title
+                            th Fee
+                            th Payment Month
+                            th Status
+                            th Action
+                        each x in studentPayment
+                            tr
+                                td=x.c_Id.title
+                                td=x.amount
+                                td #{x.month}/#{x.year}
+                                td 
+                                    if x.status == 0
+                                        .text-danger Due
+                                    else if x.status == -1
+                                        .text-primary Requested
+                                    else if x.status == 1
+                                        .text-success Paid
+                                td
+                                    if x.status == 0
+                                        a.btn.btn-warning.btn-sm.text-white.opacity-60(href=`/student/payment/manage/${x._id}/request`) Request Payment
+                                    else if x.status == -1
+                                        a.btn.btn-sm.btn-primary.disabled Requested
+                                    else 
+                                         a.btn.btn-sm.btn-success.disabled.fw-bolder Done

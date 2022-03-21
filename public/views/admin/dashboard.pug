@@ -1,0 +1,41 @@
+extend base.pug
+
+block content
+    .row 
+        .col-3 
+            .card.border.border-danger.mb-3 
+                .card-body 
+                    h1.display-6.text-multed= students
+                    p.small.text-multed Total students
+        .col-3 
+            .card.border.border-danger.mb-3 
+                .card-body 
+                    h1.display-6.text-info 500/
+                    p.small.text-multed Total paid
+        .col-3 
+            .card.border.border-danger.mb-3 
+                .card-body 
+                    h1.display-6.text-success 400
+                    p.small.text-multed Total due
+        .col-3 
+            .card.border.border-danger.mb-3 
+                .card-body 
+                    h1.display-6.text-primary= NoOfCourse
+                    p.small.text-multed Total courese
+    .row.justify-content-center
+        .col-6 
+            .card.shadow
+                .card-title.fw-bold.h5.mx-auto.mt-3 Approve Payment
+                table.table 
+                    tr 
+                        th Student
+                        th Month
+                        th Course
+                        th Action 
+                    each x in stdPay
+                        tr 
+                            td= x.stdId.name
+                            td #{x.month}/#{x.year}
+                            td=x.c_Id.title
+                            td 
+                                a(href=`/admin/dashboard/${x._id}/approve`).btn.btn-success.btn-sm Approve 

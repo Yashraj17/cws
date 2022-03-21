@@ -1,0 +1,29 @@
+extend base.pug 
+
+block content 
+    .container 
+        .row 
+            .col 
+                a(href="/admin/insert-course").btn.btn-success.btn-sm.float-end Insert Courses 
+    table.table.mt-2 
+        tr 
+            th Name
+            th Duration
+            th Instrutor
+            th Fee
+            th Description
+            th Category
+            th Action
+        each val in courses 
+            tr 
+            td=val.title
+            td=`${val.duration} Months`
+            td=val.instructor
+            td=val.discount_price 
+                span.text-muted.small=val.price
+            td=val.description
+            td=val.category_id.cat_title
+            td=val.gender
+            td 
+                a.btn.btn-danger(href=`${'/Delete-Courses/'+val._id}`)
+                    i.bi.bi-trash-fill
